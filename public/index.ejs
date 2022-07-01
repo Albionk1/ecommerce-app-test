@@ -1,0 +1,144 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard THANA DEV</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./assets/css/sidebar.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <%- include('aside'); -%>
+        <!-- end of aside --->
+
+        <main>
+            <h1>Dashboard</h1>
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-symbols-sharp">
+                        receipt
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Totali i Shitjeve</h3>
+                            <h1>14053.28$</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">24 Oret e Fundit</small>
+                </div>
+
+                <!--End of sales-->
+
+                <div class="expenses">
+                    <span class="material-symbols-sharp">
+                        grouped_bar_chart
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Totali i Shpenzimeve</h3>
+                            <h1>9563.44$</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">24 Oret e Fundit</small>
+                </div>
+
+                <!--End of expenses-->
+
+                <div class="income">
+                    <span class="material-symbols-sharp">
+                        stacked_line_chart
+                    </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Totali i Fitimit</h3>
+                            <h1>4489.84$</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">24 Oret e Fundit</small>
+                </div>
+                <!--End of income-->
+            </div>
+            <!--end of insight-->
+
+            <div class="recent-orders">
+                <h2>Porosite e Fundit</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Emri i Produktit</th>
+                            <th>Numri i Produktit</th>
+                            <th>Pagesa</th>
+                            <th>Statusi</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>Iphone 13 Pro Max</td>
+                            <td>097733</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+                <a href="#">Shfaqi te gjitha</a>
+            </div>
+        </main>
+
+        <!--end of main-->
+
+         <%- include('right'); -%>
+    </div>
+
+
+
+
+    <script src="order.js"></script>
+    <script src="main.js"></script>
+
+
+    <script>
+        var goToSecondPage = document.getElementById('logout');
+        goToSecondPage.addEventListener("click", function () {
+            document.location.href = 'log-in.html';
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard THANA DEV</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./assets/css/sidebar.css">
+    <link rel="stylesheet" href="./assets/css/perd-i-ri.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <h2>THANA <span class="danger">DEV</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="./index.html">
+                    <span class="material-symbols-sharp">dashboard_customize</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="./perdoruesit.html">
+                    <span class="material-symbols-sharp">group</span>
+                    <h3>Perdoruesit</h3>
+                </a>
+                <a href="./porosite.html">
+                    <span class="material-symbols-sharp">receipt_long</span>
+                    <h3>Porosite</h3>
+                </a>
+                <a href="./mesagges.html">
+                    <span class="material-symbols-sharp">mail_outline</span>
+                    <h3>Mesazhet</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">inventory</span>
+                    <h3>Produktet</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">report_gmailerrorred</span>
+                    <h3>Raportimet</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Cilesimet</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Dil Jashte</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- end of aside --->
+
+        <main>
+            <div class="containers">
+                <header>Regjistrimi i te rinjeve</header>
+
+                <form action="#">
+                    <div class="form first">
+                        <div class="details personal">
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Emri Mbiemri</label>
+                                    <input type="text" placeholder="Emri dhe Mbiemri" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Gjinia</label>
+                                    <select required>
+                                        <option disabled selected>Gjinia</option>
+                                        <option>Mashkull</option>
+                                        <option>Femer</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label>Data e Lindjes</label>
+                                    <input type="date" placeholder="Data e Lindjes" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Email</label>
+                                    <input type="text" placeholder="Email" required>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Adresa</label>
+                                    <input type="text" placeholder="Adresa" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Numri i Telefonit</label>
+                                    <input type="number" placeholder="Numri i telefonit" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Edukimi</label>
+                                    <input type="text" placeholder="Edukimi" required>
+                                </div>
+                                <div class="input-field">
+                                    <label>Statusi Martesor</label>
+                                    <input type="text" placeholder="I/E Martuar, Beqar" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="details ID">
+                            <button class="nextBtn">
+                                <span class="btnText">Dergo</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!--end of main-->
+        <div class="right">
+            <div class="top">
+                <span class="material-symbols-sharp" id="logout">logout</span>
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hej, <b>Diartt</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./assets/images/avatar-1.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="order.js"></script>
+    <script src="main.js"></script>
+    <script>
+        var goToSecondPage = document.getElementById('logout');
+        goToSecondPage.addEventListener("click", function () {
+            document.location.href = 'log-in.html';
+        })
+    </script>
+</body>
+
+</html>
