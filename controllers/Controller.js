@@ -17,3 +17,8 @@ module.exports.porositereja = (req,res) => {
 module.exports.perdiri= (req,res) => {
     res.render('per-i-ri')}
 
+module.exports.logout= (req,res) => {
+    res.cookie('jwt','',{maxAge : 1})
+    res.redirect('/login')
+    }
+

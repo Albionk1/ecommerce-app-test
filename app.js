@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 const Routes = require('./routes/routes')
+const cookieParser=require('cookie-parser')
+const authRoutes = require('./middleware/authmiddleware')
 
 
 const app = express()
@@ -10,6 +12,7 @@ const app = express()
 app.use(express.static('public'));
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(cookieParser())
 
 
 // view engine
@@ -27,6 +30,7 @@ app.listen(3000)
 
 // routes
 
-app.get('/', (req, res) => res.render('index'))
+app.get('/', authRoutes,(req, res) => res.render('index'))
 
 app.use(Routes)
+app.use(authRoutes)
