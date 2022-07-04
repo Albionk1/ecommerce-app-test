@@ -11,3 +11,9 @@ module.exports.perdoruesit = (req,res) => {
 
 module.exports.porosite = (req,res) => {
     res.render('porosite')}
+module.exports.porositereja = (req,res) => {
+        res.render('porositereja')}
+
+module.exports.perdiri= (req,res) => {
+    res.render('per-i-ri')}
+

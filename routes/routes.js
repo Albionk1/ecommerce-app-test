@@ -9,6 +9,8 @@ router.get('/mesagges',Controller.mesagges)
 router.get('/login',Controller.login)
 router.get('/perdoruesit',Controller.perdoruesit)
 router.get('/porosite',Controller.porosite)
+router.get('/porositereja',Controller.porositereja)
+router.get('/perdiri',Controller.perdiri)
 router.post('/signin',authController.signin)
 router.post('/register',authController.register)
 

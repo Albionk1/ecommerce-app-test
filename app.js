@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'/public'))
 
 // database connection
-mongoose.connect('mongodb://127.0.0.1:27017/ecommerce-app')
+mongoose.connect('mongodb+srv://albion:123albion@cluster0.q2e9fc8.mongodb.net/ecommerce-app')
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
