@@ -1,40 +1,48 @@
 const User = require('../models/user')
-const jwt =require('jsonwebtoken')
-const {Router} = require('express')
+const jwt = require('jsonwebtoken')
+const { Router } = require('express')
 
 const router = Router()
 
 
 const maxAge = 3 * 24 * 60 * 60
-const createToken = (id)=>{
-    return jwt.sign({id},'albion secret',{
-        expiresIn: maxAge})}
-
-
-module.exports.signin = async (req,res) => {
-    const user = await User.findByCredentials(req.body.email, req.body.password)
-    const token =  await createToken(user._id)
-    if(user.user){
-        res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge *1000})
-        res.redirect('/')
-    }  
-    else{
-        res.render('login')
-    }
+const createToken = (id) => {
+    return jwt.sign({ id }, 'albion secret', {
+        expiresIn: maxAge
+    })
 }
 
 
-module.exports.register = async (req,res) => {
-    const user = new User(req.body)
-    const token =  await createToken(user._id)
-    console.log(req.body)
+module.exports.signin = async (req, res) => {
+    const { email, password } = req.body;
+
     try {
-        await user.save()
-        res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge *1000})
-        if(user){
-            res.redirect('/')
-        }
-    } catch (e) {
-        res.status(400).send(e)
+        const user = await User.login(email, password);
+        const token = createToken(user._id);
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+        res.redirect('/')
+
     }
+    catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
     }
+
+}
+
+
+module.exports.register = async (req, res) => {
+    const { name, username, email, password } = req.body;
+
+    try {
+        const user = await User.create({ name, username, email, password });
+        const token = createToken(user._id);
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+        res.redirect('/')
+
+    }
+    catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
+    }
+}

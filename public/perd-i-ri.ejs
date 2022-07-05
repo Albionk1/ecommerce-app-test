@@ -13,51 +13,7 @@
 
 <body>
 
-    <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <h2>THANA <span class="danger">DEV</span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                    <span class="material-symbols-sharp">close </span>
-                </div>
-            </div>
-            <div class="sidebar">
-                <a href="./index.html">
-                    <span class="material-symbols-sharp">dashboard_customize</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="./perdoruesit.html">
-                    <span class="material-symbols-sharp">group</span>
-                    <h3>Perdoruesit</h3>
-                </a>
-                <a href="./porosite.html">
-                    <span class="material-symbols-sharp">receipt_long</span>
-                    <h3>Porosite</h3>
-                </a>
-                <a href="./mesagges.html">
-                    <span class="material-symbols-sharp">mail_outline</span>
-                    <h3>Mesazhet</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-sharp">inventory</span>
-                    <h3>Produktet</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-sharp">report_gmailerrorred</span>
-                    <h3>Raportimet</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-sharp">settings</span>
-                    <h3>Cilesimet</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-sharp">logout</span>
-                    <h3>Dil Jashte</h3>
-                </a>
-            </div>
-        </aside>
+    <%- include('aside'); -%>
 
         <!-- end of aside --->
 
@@ -145,20 +101,20 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
 
 
 
 
-    <script src="order.js"></script>
-    <script src="main.js"></script>
-    <script>
-        var goToSecondPage = document.getElementById('logout');
-        goToSecondPage.addEventListener("click", function () {
-            document.location.href = 'logout';
-        })
-    </script>
+        <script src="order.js"></script>
+        <script src="main.js"></script>
+        <script>
+            var goToSecondPage = document.getElementById('logout');
+            goToSecondPage.addEventListener("click", function () {
+                document.location.href = 'logout';
+            })
+        </script>
 </body>
 
 </html>

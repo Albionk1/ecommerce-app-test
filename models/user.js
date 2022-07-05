@@ -7,23 +7,24 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        validate(value){
-            if(!value){
+        validate(value) {
+            if (!value) {
                 throw new Error('Please insert a name')
             }
         }
     },
-    username:{
-       type:String,
-       required:true,
-       trim:true,
-       unique:true,
-       validate(value){
-        if(!value){
-            throw new Error('Please insert a valide username')
+    username: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true,
+        validate(value) {
+            if (!value) {
+                throw new Error('Please insert a valide username')
+            }
         }
-    }},
-      email: {
+    },
+    email: {
         type: String,
         unique: true,
         required: true,
@@ -38,26 +39,23 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minlength:[6,'Password must contain 6 characters'],
+        minlength: [6, 'Password must contain 6 characters'],
         trim: true,
-        
+
     }
-    
+
 })
 
-userSchema.statics.findByCredentials = async (email, password) => {
-        const user = await User.findOne({ email })
-    if (!user) {
-        return {error: "Email or password is wrong!"};
+userSchema.statics.login = async function (email, password) {
+    const user = await this.findOne({ email });
+    if (user) {
+        const auth = await bcrypt.compare(password, user.password);
+        if (auth) {
+            return user;
+        }
+        throw Error('incorrect password');
     }
-
-    const isMatch = await bcrypt.compare(password, user.password)
-
-    if (!isMatch) {
-        return {error: "Email or password is wrong!"};
-    }
-
-    return {user}
+    throw Error('incorrect email');
 }
 userSchema.pre('save', async function (next) {
     const user = this

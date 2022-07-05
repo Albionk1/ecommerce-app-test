@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="first-body-1">
                             <div class="profile-photo">
                                 <img src="./assets/images/avatar-1.jpeg" alt="">
@@ -374,45 +374,26 @@
 
         <!--end of main-->
 
-        <div class="right">
-            <div class="top">
-                <span class="material-symbols-sharp" id="logout">logout</span>
-                <button id="menu-btn">
-                    <span class="material-symbols-sharp">menu</span>
-                </button>
-                <div class="theme-toggler">
-                    <span class="material-symbols-sharp active">light_mode</span>
-                    <span class="material-symbols-sharp">dark_mode</span>
-                </div>
-                <div class="profile">
-                    <div class="info">
-                        <p>Hej, <b>Diartt</b></p>
-                        <small class="text-muted">Admin</small>
-                    </div>
-                    <div class="profile-photo">
-                        <img src="./assets/images/avatar-1.jpeg" alt="">
-                    </div>
-                </div>
+        <%- include('right'); -%>
+            <!--end of the top-->
             </div>
-            <!--end of the top-->   
-        </div>
-    </div>
+            </div>
 
 
 
 
-    <script src="order.js"></script>
-    <script src="main.js"></script>
-    <script>
-        var element = document.getElementById('second-body-up');
-        element.scrollTop = element.scrollHeight;
-    </script>
-    <script>
-        var goToSecondPage = document.getElementById('logout');
-        goToSecondPage.addEventListener("click", function () {
-            document.location.href = 'logout';
-        })
-    </script>
+            <script src="order.js"></script>
+            <script src="main.js"></script>
+            <script>
+                var element = document.getElementById('second-body-up');
+                element.scrollTop = element.scrollHeight;
+            </script>
+            <script>
+                var goToSecondPage = document.getElementById('logout');
+                goToSecondPage.addEventListener("click", function () {
+                    document.location.href = 'logout';
+                })
+            </script>
 </body>
 
 </html>
