@@ -4,8 +4,6 @@ const path = require('path')
 const Routes = require('./routes/routes')
 const cookieParser = require('cookie-parser')
 const authRoutes = require('./middleware/authmiddleware')
-const checkUser = require('./middleware/usermiddleware')
-
 
 
 const app = express()

@@ -3,7 +3,7 @@ const Orders = [
         productName: 'Iphone 13 Pro Max',
         productNumber: '13459',
         paymentStatus: 'Paguar',
-        shipping: 'E Derguar', 
+        shipping: 'E Derguar',
     },
     {
         productName: 'IMac ',

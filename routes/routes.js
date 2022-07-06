@@ -3,6 +3,7 @@ const Controller = require('../controllers/Controller')
 const authController = require('../controllers/authController')
 
 
+
 const authRoutes = require('../middleware/authmiddleware')
 const checkUser = require('../middleware/usermiddleware')
 
@@ -18,6 +19,8 @@ router.get('/porosite', authRoutes, Controller.porosite)
 router.get('/porositereja', authRoutes, Controller.porositereja)
 router.get('/perdiri', authRoutes, Controller.perdiri)
 router.get('/logout', Controller.logout)
+router.post('/neworder', authRoutes, authController.neworder)
+router.get('/neworder', Controller.neworderG)
 router.post('/signin', authController.signin)
 router.post('/register', authController.register)
 

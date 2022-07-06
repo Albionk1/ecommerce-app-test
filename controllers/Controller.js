@@ -1,4 +1,6 @@
-const User = require('../models/user')
+const porosit = require('../models/porosit')
+const axios = require('axios')
+
 
 module.exports.login = (req, res) => {
     res.render('login')
@@ -14,7 +16,11 @@ module.exports.perdoruesit = (req, res) => {
 }
 
 module.exports.porosite = (req, res) => {
-    res.render('porosite')
+    axios.get('http://localhost:3000/neworder')
+        .then(function (response) {
+            res.render('porosite', { porosit: response.data })
+        })
+
 }
 module.exports.porositereja = (req, res) => {
     res.render('porositereja')
@@ -30,4 +36,9 @@ module.exports.logout = (req, res) => {
 }
 module.exports.dashboard = (req, res) => {
     res.render('index')
+}
+module.exports.neworderG = (req, res) => {
+    porosit.find().then(porosi => { res.send(porosi) }).catch(err => {
+        res.status(500).send({ message: err.mesagge || "error ocurred" })
+    })
 }
