@@ -1,7 +1,8 @@
 const User = require('../models/user')
 const Porosit = require('../models/porosit')
 const jwt = require('jsonwebtoken')
-const { Router } = require('express')
+const axios = require('axios')
+
 
 
 
@@ -89,4 +90,11 @@ module.exports.neworder = async (req, res) => {
 
 
 
+}
+module.exports.porositereja = (req, res) => {
+
+    axios.get('http://localhost:3000/ofertat')
+        .then(function (response) {
+            res.render('porositereja', { oferta: response.data })
+        })
 }

@@ -54,9 +54,12 @@
                                 <div class="input-field">
                                     <label>Ofertat</label>
                                     <select name="Ofertat" required>
-                                        <option value="Oferta 1">Oferta 1 </option>
-                                        <option value="Oferta 2">Oferta 2 </option>
-                                        <option value="Oferta 3">Oferta 3 </option>
+                                        <%for (var i=0;i<oferta.length;i++){%>
+                                            <option value="<%=oferta[i].qmimi%>">
+                                                <%=oferta[i].emri%>
+                                            </option>
+                                            <%}%>
+
                                     </select>
                                 </div>
                             </div>

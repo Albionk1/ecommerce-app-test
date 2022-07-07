@@ -8,6 +8,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./assets/css/sidebar.css">
+
     <link rel="stylesheet" href="./assets/css/porosite.css">
 </head>
 
@@ -70,6 +71,15 @@
                 </table>
                 <div class="can-see">
                     <a href="#">Shfaqi te gjitha</a>
+
+                </div>
+                <div style="text-align: center;">
+                    <%for (var i=0;i<(porosiLength)/2;i++){%>
+                        <a style="padding: 9px;background-color:slategray ;border-radius: 7px;margin: 0 5px;"
+                            href="/porosite?page=<%= i+1 %>" type="submit">
+                            <%=i+1 %>
+                        </a>
+                        <%}%>
 
                 </div>
             </div>
