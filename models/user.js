@@ -42,6 +42,9 @@ const userSchema = new mongoose.Schema({
         minlength: [6, 'Password must contain 6 characters'],
         trim: true,
 
+    },
+    image: {
+        data: Buffer
     }
 
 })

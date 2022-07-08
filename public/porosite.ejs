@@ -75,11 +75,17 @@
                 </div>
                 <div style="text-align: center;">
                     <%for (var i=0;i<(porosiLength)/2;i++){%>
-                        <a style="padding: 9px;background-color:slategray ;border-radius: 7px;margin: 0 5px;"
-                            href="/porosite?page=<%= i+1 %>" type="submit">
-                            <%=i+1 %>
-                        </a>
-                        <%}%>
+                        <% if (i+1==pageNumber) {%>
+                            <a style="padding: 9px;background-color:rgb(139, 32, 32) ;border-radius: 7px;margin: 0 5px;"
+                                href="/porosite?page=<%= i+1 %>" type="submit">
+                                <%=i+1 %>
+                            </a>
+                            <%} else {%>
+                                <a style="padding: 9px;background-color:slategray ;border-radius: 7px;margin: 0 5px;"
+                                    href="/porosite?page=<%= i+1 %>" type="submit">
+                                    <%=i+1 %>
+                                </a>
+                                <%}}%>
 
                 </div>
             </div>

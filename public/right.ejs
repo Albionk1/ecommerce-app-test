@@ -16,7 +16,11 @@
                 <small class="text-muted">Admin</small>
             </div>
             <div class="profile-photo">
-                <img src="./assets/images/avatar-1.jpeg" alt="">
+                <% if(!user.image) {%>
+                    <img src="./assets/images/avatar-1.jpeg" alt="">
+                    <% }else{%>
+                        <img src="http://localhost:3000/image?id=<%= user.id %> " alt="">
+                        <% } %>
             </div>
         </div>
     </div>

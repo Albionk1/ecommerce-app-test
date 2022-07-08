@@ -2,6 +2,8 @@ const User = require('../models/user')
 const Porosit = require('../models/porosit')
 const jwt = require('jsonwebtoken')
 const axios = require('axios')
+const multer = require('multer')
+const sharp = require('sharp')
 
 
 
@@ -98,3 +100,31 @@ module.exports.porositereja = (req, res) => {
             res.render('porositereja', { oferta: response.data })
         })
 }
+
+
+module.exports.addPhoto = async (req, res) => {
+    const buffer = await sharp(req.file.buffer)
+        .resize({ width: 250, height: 250 })
+        .png()
+        .toBuffer()
+    const user = await User.findById(req.query.id, { image: buffer })
+    console.log(user)
+    await user.save()
+}
+module.exports.image = async (req, res) => {
+
+    try {
+        const user = await User.findById(req.query.id)
+
+        if (!user || !user.image) {
+            throw new Error()
+        }
+
+        res.set('Content-Type', 'image/png')
+        res.send(user.image)
+    } catch (e) {
+        res.status(404).send()
+    }
+}
+
+

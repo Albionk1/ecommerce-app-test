@@ -18,15 +18,14 @@ module.exports.perdoruesit = (req, res) => {
 
 module.exports.porosite = (req, res) => {
     if (req.query.page) {
-        axios.get('http://localhost:3000/neworder?page=' + req.query.page + '&limit=2')
+        axios.get('http://localhost:3000/neworder?page=' + req.query.page)
             .then(function (response) {
-                res.render('porosite', { porosit: response.data.results, porosiLength: response.data.leng })
+                res.render('porosite', { porosit: response.data.results, porosiLength: response.data.leng, pageNumber: response.data.next.page - 1 })
             })
     } else {
-        axios.get('http://localhost:3000/neworder?page=1&limit=2')
+        axios.get('http://localhost:3000/neworder?page=1')
             .then(function (response) {
-                console.log(response)
-                res.render('porosite', { porosit: response.data.results, porosiLength: response.data.leng })
+                res.render('porosite', { porosit: response.data.results, porosiLength: response.data.leng, pageNumber: response.data.next.page - 1 })
             })
 
     }
@@ -49,14 +48,14 @@ module.exports.dashboard = (req, res) => {
 module.exports.neworderG = (req, res) => {
     porosit.find().then(porosi => {
         var page = parseInt(req.query.page)
-        var limit = parseInt(req.query.limit)
+        var limit = 2
 
 
         const startIndex = (page - 1) * limit
         const endIndex = page * limit
 
         const results = {}
-        if (endIndex < porosi.length) {
+        if (endIndex <= porosi.length) {
             results.next = {
                 page: page + 1,
                 limit: limit
@@ -82,6 +81,7 @@ module.exports.neworderG = (req, res) => {
         res.status(500).send({ message: err.mesagge || "error ocurred" })
     })
 }
+
 module.exports.ofertat = (req, res) => {
     ofertat.find().then(ofert => { res.send(ofert) }).catch(err => {
         res.status(500).send({ message: err.mesagge || "error ocurred" })
