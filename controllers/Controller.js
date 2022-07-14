@@ -126,8 +126,6 @@ module.exports.roomPost = async (req, res) => {
     const roomExist = await Room.findOne({ room: roomName })
     const roomExistTwo = await Room.findOne({ room: roomNameTwo })
 
-
-
     if (!(roomExist || roomExistTwo)) {
         const emri = user.username + ' ' + otheruser.username
         const room = userId + otherUserId
