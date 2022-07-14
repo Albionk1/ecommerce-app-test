@@ -102,26 +102,25 @@ module.exports.porositereja = (req, res) => {
 }
 
 
+
 module.exports.addPhoto = async (req, res) => {
-    const buffer = await sharp(req.file.buffer)
-        .resize({ width: 250, height: 250 })
-        .png()
-        .toBuffer()
-    const user = await User.findById(req.query.id, { image: buffer })
-    console.log(user)
+    console.log(req.user)
+    const user = await User.findByIdAndUpdate(req.query.id, { image: req.file.buffer })
     await user.save()
+    res.send()
 }
 module.exports.image = async (req, res) => {
 
     try {
-        const user = await User.findById(req.query.id)
+        const user = await User.findById(req.params.id)
 
         if (!user || !user.image) {
             throw new Error()
         }
 
-        res.set('Content-Type', 'image/png')
+        res.setHeader('Content-Type', 'image/jpg')
         res.send(user.image)
+
     } catch (e) {
         res.status(404).send()
     }

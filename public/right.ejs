@@ -10,17 +10,13 @@
         </div>
         <div class="profile">
             <div class="info">
-                <p>Hej, <b>
+                <p> <b>
                         <%= user.username%>
                     </b></p>
                 <small class="text-muted">Admin</small>
             </div>
             <div class="profile-photo">
-                <% if(!user.image) {%>
-                    <img src="./assets/images/avatar-1.jpeg" alt="">
-                    <% }else{%>
-                        <img src="http://localhost:3000/image?id=<%= user.id %> " alt="">
-                        <% } %>
+                <img src="http://localhost:3000/image/<%= user.id %> " alt="">
             </div>
         </div>
     </div>
@@ -104,11 +100,20 @@
                 <h3>850</h3>
             </div>
         </div>
-        <div class="item add-product">
-            <div>
-                <span class="material-symbols-sharp">add</span>
-                <h3>Shto Produkte</h3>
+        <a href="/porositereja">
+            <div class="item add-product">
+                <div>
+
+
+                    <h3 class="h3333" style="color:#7380ec;"> + Shto Produkte</h3>
+
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js"
+    integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>

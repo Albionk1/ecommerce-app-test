@@ -28,203 +28,30 @@
                     </div>
                     <div class="first-body">
 
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
+                        <%for (var i=0;i<users.length;i++){if(!(user.id===users[i]._id )){%>
+                            <a href="http://localhost:3000/mesagges?username=<%= user.username%>&room=">
+                                <div class="first-body-1">
+                                    <div class="profile-photo">
+                                        <img src="http://localhost:3000/image/<%= users[i]._id %> " alt="">
+                                    </div>
+                                    <div class="text">
+                                        <div class="first-line">
+                                            <h3>
+                                                <%=users[i].name%>
+                                            </h3>
+                                            <small>Para 3 Oreve</small>
+                                        </div>
+                                        <div class="right-side-chat">
+                                            <p>
+                                                <%=users[i].email%>
+                                            </p>
 
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="first-body-1">
-                            <div class="profile-photo">
-                                <img src="./assets/images/avatar-1.jpeg" alt="">
-                            </div>
-                            <div class="text">
-                                <div class="first-line">
-                                    <h3>Diart Derguti</h3>
-                                    <small>Para 3 Oreve</small>
-                                </div>
-                                <div class="right-side-chat">
-                                    <p>diartt@gmail.com</p>
-                                    <div class="mesagges">10</div>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
 
+                            <%}}%>
                     </div>
                 </div>
                 <div class="second">
@@ -241,130 +68,29 @@
                     <div class="second-body">
 
                         <div class="second-body-up" id="second-body-up">
-
-                            <div class="second-body-l">
-                                <div class="second-body-lr">
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-2.jpg" alt="">
-                                    </div>
-                                    <div class="second-body-l-2">
-                                        <a href="#">
-                                            <h3>Diart Derguti</h3>
-                                        </a>
-                                        <small>Para 2 Minutave</small>
-                                    </div>
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
-
-                            <div class="second-body-r">
-                                <div class="second-body-lr 1">
-                                    <div class="second-body-l-2">
-                                        <small>Para 2 Minutave</small>
-                                        <a href="#">
-                                            <h3>Ti</h3>
-                                        </a>
-                                    </div>
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-1.jpg" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
-
-                            <div class="second-body-l">
-                                <div class="second-body-lr">
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-2.jpg" alt="">
-                                    </div>
-                                    <div class="second-body-l-2">
-                                        <a href="#">
-                                            <h3>Diart Derguti</h3>
-                                        </a>
-                                        <small>Para 2 Minutave</small>
-                                    </div>
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
-
-                            <div class="second-body-r">
-                                <div class="second-body-lr 1">
-                                    <div class="second-body-l-2">
-                                        <small>Para 2 Minutave</small>
-                                        <a href="#">
-                                            <h3>Ti</h3>
-                                        </a>
-                                    </div>
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-1.jpg" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
-                            <div class="second-body-l">
-                                <div class="second-body-lr">
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-2.jpg" alt="">
-                                    </div>
-                                    <div class="second-body-l-2">
-                                        <a href="#">
-                                            <h3>Diart Derguti</h3>
-                                        </a>
-                                        <small>Para 2 Minutave</small>
-                                    </div>
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
-
-                            <div class="second-body-r">
-                                <div class="second-body-lr 1">
-                                    <div class="second-body-l-2">
-                                        <small>Para 2 Minutave</small>
-                                        <a href="#">
-                                            <h3>Ti</h3>
-                                        </a>
-                                    </div>
-                                    <div class="profile-photo">
-                                        <img src="./assets/images/profile-1.jpg" alt="">
-                                    </div>
-
-                                </div>
-                                <div class="second-card">
-                                    <p>How likely are you to recommend our company to your friends and family ?</p>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="second-down">
                             <hr>
-                            <div class="down-message">
-                                <input type="text" name="Mesazhi" placeholder="Shkruaj Mesazh">
-                            </div>
+                            <form id="chat-form">
+
+                                <div class="down-message">
+                                    <input type="text" name="Mesazhi" id="msg" placeholder="Shkruaj Mesazh">
+                                </div>
 
 
-                            <div class="down-send">
-                                <div class="down-icons">
-                                    <span class="material-symbols-sharp">attach_file</span>
-                                    <span class="material-symbols-sharp">file_upload</span>
+                                <div class="down-send">
+                                    <div class="down-icons">
+                                        <span class="material-symbols-sharp">attach_file</span>
+                                        <span class="material-symbols-sharp">file_upload</span>
+                                    </div>
+                                    <div class="down-button">
+
+                                        <button type="submit">Dergo</button>
+
+                                    </div>
                                 </div>
-                                <div class="down-button">
-                                    <form>
-                                        <button type="submit" name="dergo" value="dergo">Dergo</button>
-                                    </form>
-                                </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>

@@ -2,6 +2,7 @@ const sideMenu = document.querySelector("aside");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler")
+
 // import {Orders} from 'order.js'
 
 //show sidebar
@@ -15,7 +16,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 //change theme
-themeToggler.addEventListener('click', () =>{
+themeToggler.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme-variables');
 
     themeToggler.querySelector('span').classList.toggle('active');
@@ -25,9 +26,9 @@ themeToggler.addEventListener('click', () =>{
 })
 
 //fill orders in table 
-    for (let index = 0; index < Orders.length; index++) {
-        const tr = document.createElement('tr');
-        const trContent = `
+for (let index = 0; index < Orders.length; index++) {
+    const tr = document.createElement('tr');
+    const trContent = `
                                 <td>${Orders[index].productName}</td>
                                 <td>${Orders[index].productNumber}</td>
                                 <td>${Orders[index].paymentStatus}</td>
@@ -35,10 +36,10 @@ themeToggler.addEventListener('click', () =>{
                                 ">${Orders[index].shipping}</td>
                                 <td class="primary">Details</td>
                                 `;
-                                tr.innerHTML = trContent;
-                                document.querySelector('table tbody').appendChild(tr); 
-        
-    }
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
 
- 
+}
+
+
 

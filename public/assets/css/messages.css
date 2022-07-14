@@ -71,6 +71,7 @@ body {
 
 a {
   color: var(--color-dark);
+  width: 100%
 }
 img {
   display: block;

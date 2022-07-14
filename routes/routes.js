@@ -37,8 +37,11 @@ router.get('/neworder', Controller.neworderG)
 router.get('/ofertat', Controller.ofertat)
 router.post('/signin', authController.signin)
 router.post('/addPhoto', upload.single('image'), authController.addPhoto)
-router.get('/image', authController.image)
+router.get('/image/:id', authController.image)
 router.post('/register', authController.register)
+router.get('/users', Controller.users)
+router.get('/room', authRoutes, Controller.room)
+router.post('/room', authRoutes, Controller.roomPost)
 
 
 
